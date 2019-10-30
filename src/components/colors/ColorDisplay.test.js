@@ -4,7 +4,7 @@ import ColorDisplay from './ColorDisplay';
 
 describe('ColorDisplay component', () => {
   it('renders ColorDisplay', () => {
-    const wrapper = shallow(<ColorDisplay />);
+    const wrapper = shallow(<ColorDisplay background={ 'green' }/>);
     expect(wrapper).toMatchSnapshot();
   });
 });

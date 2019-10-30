@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import ColorContainer from './ColorContainer';
 
 describe('ColorContainer component', () => {
@@ -7,5 +7,9 @@ describe('ColorContainer component', () => {
     const wrapper = shallow(<ColorContainer />);
     expect(wrapper).toMatchSnapshot();
   });
-  
+  it('changes color on button click', () => {
+    const wrapper = mount(<ColorContainer />);
+    wrapper.findWhere(el => el.key() === 'green').simulate('click');
+    expect(wrapper.state('background')).toBe('green');
+  });
 });
