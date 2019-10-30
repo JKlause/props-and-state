@@ -17,10 +17,6 @@ export default class RandomColor extends Component {
     );
   }
 
-  componentWillUnmount() {
-    clearInterval(this.secondTimer);
-  }
-
   randomColor = () => {
     const colors = ['red', 'green', 'black', 'yellow'];
     const color = colors[Math.floor(Math.random() * colors.length)];
